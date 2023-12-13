@@ -1,4 +1,4 @@
-.textinfo{
+.textinfo {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -11,8 +11,7 @@
     bottom: 17px;
 }
 
-
-body{
+body {
     background: linear-gradient(-90deg,rgba(0, 0, 0, 0.852),rgb(214, 210, 210),rgb(113, 113, 113));
     background-size: 340% 340%;
     height: 100vh;
