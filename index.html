@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARS</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="server.js">
 </head>
 <body>
+    <h1 class="userss">Online: <span id="userCount">0</span></h1>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('updateUsers', (count) => {
+      document.getElementById('userCount').innerText = count;
+    });
+  </script>
 
     <div class="text1">
         <p>Best cars for your family and you</p>
