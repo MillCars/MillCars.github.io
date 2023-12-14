@@ -1,8 +1,37 @@
 body {
+    display: flex;
+    position: relative;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    background: linear-gradient(-90deg,rgba(0, 0, 0, 0.852),rgb(214, 210, 210),rgb(113, 113, 113));
+    background-size: 340% 340%;
+    height: 100vh;
+    animation: gradient 21s ease infinite;
+}
+
+
+
+@keyframes gradient {
+    0%{
+     background-position: 0% 20%;
+    }
+
+    20%{
+        background-position: 20% 50%;
+    }
+
+    50%{
+        background-position: 50% 70%;
+    }
+
+    70%{
+        background-position: 100% 70%;
+    }
+
+    100%{
+        background-position: 0% 20%;
+    }
 }
 
 .container {
@@ -12,6 +41,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Замените на ваш выбор */
 }
 
 form {
@@ -21,6 +51,8 @@ form {
     border-radius: 8px;
     box-shadow: 0 0 5px rgb(0, 0, 0);
 }
+
+/* Остальные стили остаются без изменений */
 
 label {
     display: block;
@@ -36,13 +68,13 @@ textarea {
     box-sizing: border-box;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transition: border-color 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
     border-color: #da8e0a;
 }
-
 
 button {
     background-color: rgb(108, 11, 11);
@@ -51,15 +83,14 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
     background-color: #d02a1b;
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
-
 
 .reviews {
     border-top: 1px solid #ccc;
@@ -67,15 +98,16 @@ button:hover {
 }
 
 .review {
-        margin-bottom: 20px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgb(0, 0, 0);
-
-    
-}
-
-.review, button, input, textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     transition: all 0.3s ease;
 }
+
+.review:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
