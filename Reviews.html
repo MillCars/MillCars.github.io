@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Leave your feedback</h2>
+        <form id="reviewForm">
+            <label for="userName">Your name:</label>
+            <input type="text" id="userName" name="userName" required>
+
+            <label for="userReview">Your feedback:</label>
+            <textarea id="userReview" name="userReview" rows="4" required></textarea>
+
+            <button type="button" onclick="submitReview()">Send feedback</button>
+        </form>
+
+        <div class="reviews" id="reviewsContainer">
+            <!-- Отзывы будут добавляться сюда -->
+        </div>
+    </div>
+
+    <script>
+        function submitReview() {
+            var userName = document.getElementById('userName').value;
+            var userReview = document.getElementById('userReview').value;
+
+            // Пример: отправка данных на сервер (здесь используется заглушка)
+            // В реальном проекте следует использовать AJAX для отправки данных на сервер
+            // и PHP (или другой язык серверной стороны) для обработки данных
+            // и сохранения в базу данных.
+
+            var reviewContainer = document.getElementById('reviewsContainer');
+            var newReview = document.createElement('div');
+            newReview.className = 'review';
+            newReview.innerHTML = '<strong>' + userName + ':</strong> ' + userReview;
+            reviewContainer.appendChild(newReview);
+
+            // Очистить форму после отправки
+            document.getElementById('reviewForm').reset();
+        }
+    </script>
+
+<script>
+    // Загрузка отзывов из LocalStorage при загрузке страницы
+    window.onload = function() {
+        loadReviews();
+    };
+
+    // Функция отправки отзыва
+    function submitReview() {
+        var userName = document.getElementById('userName').value;
+        var userReview = document.getElementById('userReview').value;
+
+        // Получение текущих отзывов из LocalStorage
+        var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+        // Добавление нового отзыва
+        reviews.push({ userName: userName, userReview: userReview });
+
+        // Сохранение отзывов в LocalStorage
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+
+        // Перезагрузка отзывов для обновления списка
+        loadReviews();
+
+        // Очистить форму после отправки
+        document.getElementById('reviewForm').reset();
+    }
+
+    // Функция загрузки отзывов из LocalStorage
+    function loadReviews() {
+        var reviewsContainer = document.getElementById('reviewsContainer');
+        reviewsContainer.innerHTML = '';
+
+        var reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+        for (var i = 0; i < reviews.length; i++) {
+            var reviewDiv = document.createElement('div');
+            reviewDiv.className = 'review';
+            reviewDiv.innerHTML = '<strong>' + reviews[i].userName + ':</strong> ' + reviews[i].userReview;
+            reviewsContainer.appendChild(reviewDiv);
+        }
+    }
+</script>
+
+<form id="reviewForm" action="rew.php" method="post">
+    <!-- Ваши поля ввода и кнопка отправки -->
+</form>
+
+
+</body>
+</html>
