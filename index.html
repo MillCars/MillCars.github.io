@@ -5,20 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARS</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="server.js">
 </head>
 <body>
-    <h1 class="userss">Online: <span id="userCount">0</span></h1>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
-  <script>
-    const socket = io();
-
-    socket.on('updateUsers', (count) => {
-      document.getElementById('userCount').innerText = count;
-    });
-  </script>
-
     <div class="text1">
         <p>Best cars for your family and you</p>
     </div>
@@ -36,5 +24,15 @@
        <li type="button"><a href="contacts.html">Contacts</a></li>
        <li type="button"><a href="support.html">Support</a></li>
     </ul>
+
+
+ <div class="modal" id="adModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <p class="text7">Зайди на <a class="traffic" href="https://www.trafficox.com/">trafficox</a> и продай или купи трафик как ты хочешь!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 
 </html>
