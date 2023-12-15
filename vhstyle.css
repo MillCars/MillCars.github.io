@@ -1,0 +1,223 @@
+.bmw {
+    position: relative;
+    height: 367px;
+    transition: transform 0.3s ease; /* Добавляем анимацию при изменении размера */
+    left: 10px;
+
+}
+
+.bmw:hover {
+    transform: scale(1.1); /* Увеличиваем размер на 10% при наведении */
+}
+
+.textbmw {
+    display: flex;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(22, 78, 199, 0.749);
+    font-size: 28px;
+    box-shadow: 100px;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #ff0000c7, #5079d2, #3700ff, #ffffff8c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 18s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.textbmw1 {
+    display: flex;
+    position: relative;
+    bottom: 390px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(2, 27, 81, 0.895);
+    font-size: 38px;
+    left: 520px;
+    box-shadow: 100px;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #ff0000c7, #5079d2, #3700ff, #ffffff8c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.textbmw2 {
+    display: flex;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(47, 72, 125, 0.895);
+    font-size: 32px;
+    bottom: 154px;
+    left: 534px;
+    box-shadow: 100px;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #fe0707c7, #0d2f72, #5224dea1, #c4e5628c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 3s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.bmw1 {
+    display: flex;
+    position: relative;
+    height: 347px;
+    bottom: 433px;
+}
+
+
+
+body {
+    background: linear-gradient(to right, #e4dedec4, #0b1de1b3);
+    /* Замените цвета на те, которые вы хотите использовать */
+    margin: 0;
+    padding: 0;
+    height: 130vh;
+    font-family: Arial, sans-serif;
+    animation: gradient 21s ease infinite;
+}
+
+
+@keyframes gradient {
+    0%{
+     background-position: 0% 20%;
+    } 
+
+    20%{
+        background-position: 20% 50%;
+    }
+
+    50%{
+        background-position: 50% 70%;
+    }
+
+    70%{
+        background-position: 100% 70%;
+    }
+
+    100%{
+        background-position: 0% 20%;
+    }
+}
+
+
+.bmw:hover {
+    transform: scale(1.1); /* Увеличиваем размер на 10% при наведении */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.7)); /* Добавляем синюю подцветку */
+}
+
+.bmw1:hover {
+    transform: scale(1.23); /* Увеличиваем размер на 23% при наведении */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 0.7)); /* Добавляем синюю подцветку */
+}
+
+
+.bmw3{
+    position: relative;
+    height: 367px;
+    transition: transform 0.3s ease; /* Добавляем анимацию при изменении размера */
+    left: 10px;
+
+}
+
+
+
+.bmw6:hover {
+    transform: scale(1.17); /* Увеличиваем размер на 23% при наведении */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); /* Добавляем синюю подцветку */
+    position: relative;
+}
+
+
+.bmw6{
+    position: relative;
+    height: 332px;
+    left: 754px;
+    bottom: 429px;
+}
+
+
+
+.text9{
+    display: flex;
+    position: relative;
+    bottom: 410px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(2, 27, 81, 0.895);
+    font-size: 41px;
+    left: 20px;
+    box-shadow: 100px;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #ff0000c7, #5079d2, #3700ff, #ffffff8c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 4s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+.bmw7{
+    position: relative;
+    height: 332px;
+    left: 89px;
+    bottom: 987px;
+}
+
+.bmw7:hover {
+    transform: scale(1.09); /* Увеличиваем размер на 23% при наведении */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); /* Добавляем синюю подцветку */
+    position: relative;
+}
