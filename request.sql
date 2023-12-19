@@ -6,3 +6,11 @@ CREATE TABLE IF NOT EXISTS reviews (
     userName VARCHAR(255) NOT NULL,
     userReview TEXT NOT NULL
 );
+
+
+ALTER TABLE reviews
+ADD COLUMN moderation_status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending';
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+</head>
+<body>
+    <h2>Registration</h2>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <script>
+        function register() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Perform AJAX request to your server-side registration endpoint
+            // Here you would typically use a library like fetch or jQuery.ajax
+            // to send a request to your server for user registration.
+
+            // Assume registration is successful for the sake of simplicity
+            // and redirect the user back to the previous page.
+            var previousPage = document.referrer || "/";
+            window.location.href = previousPage;
+        }
+    </script>
+
+<form method="post" action="process.php">
+    <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+    <!-- Остальные поля формы -->
+    <button type="submit">Отправить</button>
+</form>
+
+</body>
+</html>
