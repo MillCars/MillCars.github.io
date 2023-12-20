@@ -3,46 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="rewstyle.css">
-    <title>Форма отзывов</title>
+    <title>Feedback Form</title>
 </head>
 <body>
 
-
-
-<h2>Оставьте свой отзыв</h2>
-
-<form id="reviewForm" method="post">
-    <label for="name">Имя:</label>
-    <input type="text" id="name" name="name" required><br>
-
-    <label for="email">Электронная почта:</label>
-    <input type="email" id="email" name="email"><br>
-
-    <label for="rating">Оценка:</label>
-    <select id="rating" name="rating">
-        <option value="1">1 звезда</option>
-        <option value="2">2 звезды</option>
-        <option value="3">3 звезды</option>
-        <option value="4">4 звезды</option>
-        <option value="5">5 звезд</option>
-    </select><br>
-
-    <label for="review">Текст отзыва:</label><br>
-    <textarea id="review" name="review" rows="4" required></textarea><br>
-
-    <input type="submit" value="Отправить отзыв">
+<form id="feedbackForm" onsubmit="submitFeedback(event)" action="process_feedback.php" method="post">
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+    <br>
+    <button type="submit">Submit Feedback</button>
 </form>
 
 <script>
-document.getElementById("reviewForm").addEventListener("submit", function(event) {
-    // Отправка данных на разные скрипты
-    if (/* Ваша логика для определения, куда отправить данные */) {
-        this.action = "base.php";
-    } else {
-        this.action = "moderate_review.php";
-    }
-});
+function submitFeedback(event) {
+    // Отменяем стандартное поведение формы (перезагрузку страницы)
+    event.preventDefault();
+
+    // Отправка данных формы на сервер с использованием AJAX
+    var feedbackText = document.getElementById("feedback").value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "process_feedback.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Обработка успешного ответа
+                alert("Отзыв отправлен! Спасибо за ваш отзыв.");
+                window.location.href = "thank_you.php"; // Перенаправление на другую страницу
+            } else {
+                // Обработка ошибки
+                alert("Произошла ошибка при отправке отзыва.");
+            }
+        }
+    };
+
+    xhr.send("feedback=" + encodeURIComponent(feedbackText));
+}
 </script>
 
 </body>

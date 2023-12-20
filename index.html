@@ -6,11 +6,22 @@
     
     <title>CARS</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      /* Добавьте стили, если нужно настроить размеры или расположение картинки */
+      #animatedImage {
+          width: 300px; /* Замените на нужные размеры */
+          height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+      }
+  </style>
 </head>
 <body>
     <div class="text1">
         <p data-translate="text1-header">Best cars for your family and you</p>
     </div>
+
+    <p class="users">Users online: <span id="userCounter">0</span></p>
+
+    <script src="userCounter.js"></script>
 
     <a class="text2" href="more.html">
         <span></span>
@@ -40,6 +51,8 @@
 
     <script src="script.js"></script>
   </form>
+
+  <img class="gifcar" id="animatedImage" src="car.gif" alt="Animated Image">
 
 
 </body>

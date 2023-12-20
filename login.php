@@ -22,18 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (password_verify($password, $storedHashedPassword)) {
         // Пароль верен
 
-        // Выполните дополнительные действия, например, установка сессии или перенаправление
-        // Например:
-        // session_start();
-        // $_SESSION["username"] = $username;
-        // header("Location: welcome.php");
-        // exit();
+        session_start();
+         $_SESSION["username"] = $username;
+        header("Location: welcome.php");
+        exit();
     } else {
-        // Пароль не верен
-        // В этом месте вы можете предпринять действия при неудачной аутентификации,
-        // например, отображение сообщения об ошибке.
-        // Например:
-        // echo "Неверное имя пользователя или пароль";
+      
+         echo "Invalid username or password";
     }
 
     // Вставка токена в форму

@@ -248,3 +248,19 @@ body::after {
 
 
 
+
+.users{
+    position: relative;
+    color: beige;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    bottom:535px;
+    left: 23px;
+}
+
+
+.gifcar{
+    position: relative;
+    bottom: 430px;
+    left: 460px;
+
+}
